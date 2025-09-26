@@ -1,7 +1,10 @@
-Django>=5.0,<6.0
-gunicorn
+Django>=4.2
+djangorestframework
+djangorestframework-simplejwt
 psycopg2-binary
+celery[redis]
 redis
-celery
+python-dotenv
 django-cors-headers
-python-decouple
+reportlab
+weasyprint
