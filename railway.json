@@ -4,16 +4,5 @@
   },
   "deploy": {
     "startCommand": "gunicorn school.wsgi:application --bind 0.0.0.0:$PORT --workers 3"
-  },
-  "services": [
-    {
-      "name": "backend",
-      "platform": "docker",
-      "build": {
-        "docker": {
-          "path": "."
-        }
-      }
-    }
-  ]
+  }
 }

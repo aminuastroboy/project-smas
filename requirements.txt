@@ -7,4 +7,3 @@ redis
 python-dotenv
 django-cors-headers
 reportlab
-weasyprint
