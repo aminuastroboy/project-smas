@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <body>
+    <p>Dear {{ guardian_name }},</p>
+    <p>Your ward <strong>{{ student_name }}</strong> scored <strong>{{ percent }}%</strong> in <em>{{ exam_title }}</em>.</p>
+    <h4>Weak Areas</h4>
+    {% if breakdown.weak_topics %}
+      <ul>
+      {% for t in breakdown.weak_topics %}
+        <li>{{ t }}</li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>No weak topics detected.</p>
+    {% endif %}
+    <h4>Topic Breakdown</h4>
+    <ul>
+      {% for topic, data in breakdown.topic_scores.items %}
+        <li>{{ topic }} — {{ data.score }}/{{ data.max }} ({{ data.percent }}%)</li>
+      {% endfor %}
+    </ul>
+    <h4>Career Advice</h4>
+    <ul>
+    {% for c in career_advice %}
+      <li>{{ c }}</li>
+    {% endfor %}
+    </ul>
+    <p>Regards,<br/>School Admin</p>
+  </body>
+</html>
